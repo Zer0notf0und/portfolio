@@ -1,0 +1,46 @@
+/* src/browse/browse.css */
+
+.browse-container {
+  /* --- FIX: Use Flexbox to perfectly center content --- */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center;     /* Centers horizontally */
+
+  /* --- FIX: Ensure the container is always full-screen --- */
+  min-height: 100vh;
+  width: 100%;
+
+  background-color: #000;
+  position: relative; /* Crucial for the background component */
+  overflow: hidden;
+}
+
+.custom-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Places it in the background */
+}
+
+/* Ensure all foreground content is stacked on top */
+.who-is-watching,
+.profiles {
+  position: relative; /* Keeps them in the normal flow but above the background */
+  z-index: 2;
+  bottom:80vh;
+  text-align: center;
+}
+
+.who-is-watching {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.profiles {
+  display: flex;
+  gap: 2rem;
+}
