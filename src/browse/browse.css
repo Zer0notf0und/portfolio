@@ -1,19 +1,23 @@
 /* src/browse/browse.css */
 
 .browse-container {
-  /* --- FIX: Use Flexbox to perfectly center content --- */
+  /* --- Perfect centering with Flexbox --- */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center;     /* Centers horizontally */
-
-  /* --- FIX: Ensure the container is always full-screen --- */
-  min-height: 100vh;
-  width: 100%;
-
+  justify-content: center;
+  align-items: center;
+  
+  /* --- Fixed viewport sizing --- */
+  height: 100vh; /* Use fixed height instead of min-height */
+  width: 100vw;  /* Full viewport width */
+  margin: 0;
+  padding: 0;
+  
   background-color: #000;
-  position: relative; /* Crucial for the background component */
-  overflow: hidden;
+  position: fixed; /* Use fixed positioning to prevent scrolling */
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Prevent any overflow */
 }
 
 .custom-rays {
@@ -22,27 +26,62 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Places it in the background */
+  z-index: 1;
+  pointer-events: none; /* Ensure rays don't interfere with interactions */
 }
 
-/* Ensure all foreground content is stacked on top */
+/* Foreground content stacking */
 .who-is-watching,
 .profiles {
-  position: relative; /* Keeps them in the normal flow but above the background */
+  position: relative;
   z-index: 2;
   text-align: center;
 }
 
 .who-is-watching {
   color: white;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
+/* --- Responsive Grid Layout for Profiles --- */
 .profiles {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 150px));
   gap: 2rem;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  .profiles {
+    grid-template-columns: repeat(2, minmax(100px, 120px));
+    gap: 1.5rem;
+  }
+  
+  .who-is-watching {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profiles {
+    grid-template-columns: repeat(2, minmax(80px, 100px));
+    gap: 1rem;
+  }
+  
+  .who-is-watching {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profiles {
+    grid-template-columns: repeat(4, 150px);
+    gap: 3rem;
+  }
 }
