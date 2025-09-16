@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './ProfileBanner.css';
 import PlayButton from '../components/PlayButton';
 import MoreInfoButton from '../components/MoreInfoButton';
-import { getProfileBanner } from '../queries/getProfileBanner';
 import { ProfileBanner as ProfileBannerType } from '../types';
+import { getProfileBanner } from '../queries/getProfileBanner';
 
 const ProfileBanner: React.FC = () => {
 
