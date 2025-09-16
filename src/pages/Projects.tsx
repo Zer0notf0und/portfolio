@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
-import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs, FaFlask, FaHardHat, FaLightbulb } from 'react-icons/fa';
+import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo, SiSocketdotio, SiSupabase, SiAwslambda, SiKotlin, SiAndroidstudio, SiMysql, SiSqlite, SiRender, SiGit, SiAudioboom, SiVercel, SiPowerbi, SiMicrosoftexcel, SiTensorflow, SiSolidity, SiEthers, SiIntel } from 'react-icons/si';
 import { Project } from '../types';
 import { getProjects } from '../queries/getProjects';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
 
 const techIcons: { [key: string]: JSX.Element } = {
+  
   "ReactJS": <FaReact />,
   "NodeJS": <FaNodeJs />,
   "AWS": <FaAws />,
@@ -17,9 +18,22 @@ const techIcons: { [key: string]: JSX.Element } = {
   "HTML5": <SiHtml5 />,
   "CSS3": <SiCss3 />,
   "jQuery": <SiJquery />,
-  "AWS-ECS": <SiAwsamplify />,
+  "AWS-Amplify": <SiAwsamplify />,
+  " ECS)": <SiAwsamplify />,
+  'Vercel': <SiVercel/>,
+  'PowerBI':<SiPowerbi/>,
+  'Excel':<SiMicrosoftexcel/>,
+  'TensorFlow':<SiTensorflow/>,
+  'Keras':<SiTensorflow/>,
+  'Solidity':<SiSolidity/>,
+  'HardHat':<FaHardHat/>,
+  'Ethers.js':<SiEthers/>,
+  'Llama 3':<FaLightbulb/>,
+  'Sepolia':<SiSolidity/>,
   'Cognito': <FaAws />,
-  'Lambda': <FaAws />,
+  'Socket.io':<SiSocketdotio/>,
+  'Kotlin':<SiKotlin/>,
+  'Android Studio':<SiAndroidstudio/>,
   'ECS': <FaAws />,
   'Jenkins': <FaJenkins />,
   'Docker': <FaDocker />,
@@ -30,8 +44,14 @@ const techIcons: { [key: string]: JSX.Element } = {
   'Heroku': <GrDeploy />,
   'Netlify': <GrDeploy />,
   'Firebase': <SiFirebase />,
+  'Flask':<FaFlask/>,
+  'Supabase':<SiSupabase/>,
   'GCP': <FaGoogle />,
   'Azure': <FaMicrosoft />,
+  'MySQL':<SiMysql/>,
+  'Render':<SiRender/>,
+  'HTML':<SiHtml5/>,
+  'SQL':<SiSqlite/>,
   'Kubernetes': <GrKubernetes />,
   'Terraform': <SiTerraform />,
   'ArgoCD': <SiArgo />,
@@ -51,9 +71,14 @@ const techIcons: { [key: string]: JSX.Element } = {
   'Vue.js': <FaVuejs />,
   'Next.js': <FaReact />,
   'Gatsby': <FaReact />,
+  'Git':<SiGit/>,
+  'Librosa':<SiAudioboom/>,
   'Nuxt.js': <FaVuejs />,
   'Redux': <FaReact />,
+  'Lambda':<SiAwslambda/>,
+  'AWS(Lambda':<SiAwslambda/>,
   'Vuex': <FaVuejs />,
+  'S3':<FaAws/>,
   'Tailwind CSS': <SiCss3 />,
   'Bootstrap': <SiCss3 />,
   'JQuery': <SiJquery />,
