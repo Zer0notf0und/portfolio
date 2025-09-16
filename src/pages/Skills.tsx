@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava, FaPython, FaBootstrap, FaFlask, FaHtml5 } from 'react-icons/fa';
+import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage, SiPowerbi, SiCplusplus, SiNextdotjs, SiKotlin, SiSmart } from 'react-icons/si';
 import { Skill } from '../types';
 
 const iconMap: { [key: string]: JSX.Element } = {
   SiRubyonrails: <SiRubyonrails />,
+  cpp:<SiCplusplus/>,
+  python:<FaPython/>,
+  next:<SiNextdotjs/>,
   FaNodeJs: <FaNodeJs />,
   SiSpringboot: <SiSpringboot />,
+  powerbi: <SiPowerbi/>,
+  kotlin:<SiKotlin/>,
   FaJava: <FaJava />,
   SiPhp: <SiPhp />,
   FaReact: <FaReact />,
@@ -24,6 +29,10 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiNetlify: <SiNetlify />,
   SiRabbitmq: <SiRabbitmq />,
   SiImessage: <SiImessage />,
+  bootstrap:<FaBootstrap/>,
+  flask:<FaFlask/>,
+  htmlsi:<FaHtml5/>,
+  ai:<SiSmart/>
 };
 
 
