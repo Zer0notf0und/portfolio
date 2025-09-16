@@ -30,7 +30,6 @@
 .profiles {
   position: relative; /* Keeps them in the normal flow but above the background */
   z-index: 2;
-  bottom:80vh;
   text-align: center;
 }
 
